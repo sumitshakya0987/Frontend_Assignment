@@ -1,73 +1,30 @@
-# React + TypeScript + Vite
+# Front-end Assignment: React UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a responsive web application built for the front-end assignment. I replicated the provided Figma designs for the Knowledge Base screen.
 
-Currently, two official plugins are available:
+## Technologies Used
+- React (Functional components + Hooks)
+- Vite for fast development
+- Tailwind CSS (configured carefully with the required `#4F46E5` and `#1E1B4B` colors)
+- TypeScript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## How to run the project
 
-## React Compiler
+1. Clone the repository and `cd` into the folder.
+2. Make sure you have Node.js installed.
+3. Run `npm install` to install all necessary packages.
+4. Run `npm run dev` to start the local development server.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features Implemented
+- The **Knowledge Base Home Screen** is fully implemented with a grid layout and pagination footer.
+- The **"Create New" button** is clickable and opens the right-aligned side panel exactly as shown in the second screen mockup.
+- **Component Based Architecture**: I broke the UI down into clean, reusable pieces like `Header`, `Sidebar`, `Button`, `InputField`, and `KnowledgeBaseCard`.
+- **Responsive Design**: The sidebar collapses into a hidden hamburger menu on mobile screens to ensure the app looks good on all devices.
 
-## Expanding the ESLint configuration
+## Screenshots
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Home Screen
+![Knowledge Base](./screenshots/screen1.png)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Create New Panel
+![Create New](./screenshots/screen2.png)
